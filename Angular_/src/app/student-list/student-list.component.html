@@ -1,0 +1,23 @@
+<h3>Student List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email ID</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of students | async">
+            <td>{{student.name}}</td>
+            <td>{{student.phoneno}}</td>
+            <td>{{student.email}}</td>
+            <td>
+                <button (click)="updateStudent(student.id)" class="btn btn-info">Update</button>
+                <button (click)="deleteStudent(student.id)" class="btn btn-danger" style="margin-left:10px">Delete</button>
+                <button (click)="studentDetails(student.id)" class="btn btn-info" style="margin-left:10px">View</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
